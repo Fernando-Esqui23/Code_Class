@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App de Productos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/vue-select@3.0.0/dist/vue-select.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
     <div class="container-fluid" id="app">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand">::.. SISTEMA DE FACTURACION ..::</a>
+                <a class="navbar-brand">::.. BIBLIOTECA ..::</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" @click="mostrarFormulario('autor')">Autores</a> <!-- Nuevo enlace para abrir formulario de autores -->
+                        <a class="nav-link" @click="abrirFormulario('matricula')">Autor</a>
+                        <a class="nav-link" @click="abrirFormulario('inscripcion')">Libro</a>
+                        
                     </div>
                 </div>
             </div>
         </nav>
         <div id="appSistema">
-            <componente-autores ref="autor" v-show="formularioActual === 'autor'"></componente-autores> <!-- Componente de autores -->
+            <componente-matriculas ref="matricula" v-show="forms['matricula'].mostrar"></componente-matriculas>
+            <componente-inscripcions ref="inscripcion" v-show="forms['inscripcion'].mostrar"></componente-inscripcions>
+            
         </div>
     </div>
-   
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-select@3.0.0"></script>
-    <script src="bd_ussss021722_usss004122.js"></script>
-    <script src="autores.js"></script> <!-- Agregar script para el componente de autores -->
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                formularioActual: null
-            },
-            methods: {
-                mostrarFormulario(formulario) {
-                    this.formularioActual = formulario;
-                }
-            }
-        });
-    </script>
+    <script src="db_USSS108722_USSS107522.js"></script>
+    <script src="matricula.js"></script>
+    <script src="inscripcion.js"></script>
+    <script src="imagenes.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
